@@ -88,7 +88,9 @@
                                 <connections>
                                     <outlet property="m_imageView" destination="TE0-lo-hHd" id="s6V-7o-BAA"/>
                                     <outlet property="m_titleLabel" destination="KBg-ZS-Ffo" id="GAR-hW-j9i"/>
+                                    <outlet property="m_titleTitle" destination="aTs-Nb-epv" id="Ifl-pr-6nz"/>
                                     <outlet property="m_year" destination="5E4-Rj-Dww" id="2f3-Jl-4GV"/>
+                                    <outlet property="m_yearTitle" destination="m9m-yO-grq" id="u5p-b6-Yhv"/>
                                     <segue destination="HDb-FI-02M" kind="show" identifier="showDetail" id="Wdy-N2-5l2"/>
                                 </connections>
                             </tableViewCell>
@@ -123,7 +125,6 @@
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VIT-b2-ugK">
                                                 <rect key="frame" x="184" y="69" width="120" height="29"/>
-                                                <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <state key="normal" image="square.and.arrow.up" catalog="system"/>
                                                 <connections>
                                                     <action selector="shareObject:" destination="HDb-FI-02M" eventType="touchUpInside" id="y4R-YY-lcH"/>
@@ -131,7 +132,6 @@
                                             </button>
                                             <imageView verifyAmbiguity="ignoreSizes" clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ccq-Zb-qjz" userLabel="image">
                                                 <rect key="frame" x="8" y="8" width="150" height="150"/>
-                                                <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <gestureRecognizers/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="150" id="JlS-Wh-1Dw"/>
@@ -149,7 +149,6 @@
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0P0-9E-GAP" userLabel="Title_Text" customClass="CopyableUILabel" customModule="YourMovies" customModuleProvider="target">
                                                 <rect key="frame" x="8" y="187" width="358" height="43"/>
-                                                <color key="backgroundColor" systemColor="systemBrownColor" red="0.63529411759999999" green="0.51764705879999995" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="43" id="9uW-dv-Uk9"/>
                                                 </constraints>
@@ -165,28 +164,24 @@
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fecha de salida" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tPP-sb-3Zv" customClass="CopyableUILabel" customModule="YourMovies" customModuleProvider="target">
                                                 <rect key="frame" x="8" y="267" width="358" height="21"/>
-                                                <color key="backgroundColor" systemColor="systemBrownColor" red="0.63529411759999999" green="0.51764705879999995" blue="0.36862745099999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Duración" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bX9-ss-O5P" customClass="CopyableUILabel" customModule="YourMovies" customModuleProvider="target">
                                                 <rect key="frame" x="8" y="325" width="358" height="21"/>
-                                                <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Género" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V8D-Wm-uME" customClass="CopyableUILabel" customModule="YourMovies" customModuleProvider="target">
                                                 <rect key="frame" x="8" y="383" width="358" height="21"/>
-                                                <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Web" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yd9-vG-vnX" customClass="CopyableUILabel" customModule="YourMovies" customModuleProvider="target">
                                                 <rect key="frame" x="8" y="441" width="358" height="43"/>
-                                                <color key="backgroundColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="43" id="Qep-Qt-VFD"/>
                                                 </constraints>
@@ -225,7 +220,6 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="qWB-a4-e56" secondAttribute="trailing" constant="8" id="0TC-e4-ef3"/>
                                             <constraint firstAttribute="trailing" secondItem="V8D-Wm-uME" secondAttribute="trailing" constant="8" id="1K5-QT-ady"/>
@@ -271,7 +265,6 @@
                                         </constraints>
                                     </view>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="cBX-m4-38p" secondAttribute="trailing" id="5ah-h8-GOj"/>
                                     <constraint firstItem="cBX-m4-38p" firstAttribute="width" secondItem="ubb-6I-ZYC" secondAttribute="width" id="Iyz-mC-JU9"/>
