@@ -23,6 +23,7 @@
 		8B871F8123471699007E7A4C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B871F8023471699007E7A4C /* Assets.xcassets */; };
 		8B871F8423471699007E7A4C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B871F8223471699007E7A4C /* LaunchScreen.storyboard */; };
 		8B871F8F23471699007E7A4C /* YourMoviesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B871F8E23471699007E7A4C /* YourMoviesTests.swift */; };
+		8B8B78AD23479B4F0094C0CB /* splashScreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B8B78AC23479B4E0094C0CB /* splashScreen.png */; };
 		F464B615BA9376EA6DBA3BB9 /* Pods_YourMovies.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 353D33CE96E561805C59BB68 /* Pods_YourMovies.framework */; };
 /* End PBXBuildFile section */
 
@@ -61,6 +62,7 @@
 		8B871F8A23471699007E7A4C /* YourMoviesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YourMoviesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B871F8E23471699007E7A4C /* YourMoviesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YourMoviesTests.swift; sourceTree = "<group>"; };
 		8B871F9023471699007E7A4C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8B8B78AC23479B4E0094C0CB /* splashScreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = splashScreen.png; sourceTree = "<group>"; };
 		CFB192A5EF06C3D120671011 /* Pods-YourMoviesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YourMoviesTests.debug.xcconfig"; path = "Target Support Files/Pods-YourMoviesTests/Pods-YourMoviesTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -150,6 +152,7 @@
 		8B57AD6C23472D6200C466EE /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				8B8B78AC23479B4E0094C0CB /* splashScreen.png */,
 				8B871F8023471699007E7A4C /* Assets.xcassets */,
 			);
 			path = Assets;
@@ -296,6 +299,7 @@
 				8B871F8423471699007E7A4C /* LaunchScreen.storyboard in Resources */,
 				8B84CE492347812000362A96 /* Localizable.strings in Resources */,
 				8B871F8123471699007E7A4C /* Assets.xcassets in Resources */,
+				8B8B78AD23479B4F0094C0CB /* splashScreen.png in Resources */,
 				8B871F7F23471698007E7A4C /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

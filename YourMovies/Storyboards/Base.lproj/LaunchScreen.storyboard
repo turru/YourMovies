@@ -15,13 +15,29 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splashScreen.png" translatesAutoresizingMaskIntoConstraints="NO" id="eUd-oF-Hu5">
+                                <rect key="frame" x="97" y="343" width="220" height="220"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="220" id="6nq-mf-9Dm"/>
+                                    <constraint firstAttribute="height" constant="220" id="db2-Fd-Upg"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.91533759715025909" green="0.91533759715025909" blue="0.91533759715025909" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="eUd-oF-Hu5" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="ZgC-oe-XPh"/>
+                            <constraint firstItem="eUd-oF-Hu5" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="avm-Bb-h69"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="52.173913043478265" y="375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="splashScreen.png" width="300" height="298.5"/>
+    </resources>
 </document>
