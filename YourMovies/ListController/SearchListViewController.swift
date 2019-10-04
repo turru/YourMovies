@@ -12,7 +12,10 @@ import Alamofire
 
 class SearchListViewController: UITableViewController {
 
+    // MARK: - Variables
     @IBOutlet weak var m_searchBar: UISearchBar!
+
+    // MARK: - Private Variables
     private let m_searchController = UISearchController(searchResultsController: nil)
     private var m_searchResults = [JSON]() {
           didSet {
@@ -24,7 +27,9 @@ class SearchListViewController: UITableViewController {
     private var m_previousRun = Date()
     private let m_minInterval = 0.05
     private let m_identifierCell = "cell"
+    private let m_identifierSegue = "showDetail"
 
+    // MARK: - Inits
     override func viewDidLoad()
     {
         super.viewDidLoad()
@@ -49,7 +54,6 @@ class SearchListViewController: UITableViewController {
         else
         {
             setupTableViewBackgroundView(text: "No results to show")
-
         }
 
         return m_searchResults.count
@@ -81,7 +85,6 @@ class SearchListViewController: UITableViewController {
       return cell
     }
 
-
     // MARK: - Private Methods
     private func setupTableViewBackgroundView(text: String) {
           let backgroundViewLabel = UILabel(frame: .zero)
@@ -93,10 +96,26 @@ class SearchListViewController: UITableViewController {
           tableView.backgroundView = backgroundViewLabel
     }
 
+     // MARK: - Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+
+        super.prepare(for: segue, sender: sender)
+        switch segue.identifier ?? "" {
+        case m_identifierSegue:
+            guard let detailView = segue.destination as? DetailViewController else {
+                fatalError("Unexpected segue: \(segue.destination)")
+            }
+            guard let selectedMealCell = sender as? CellTableViewCell else {
+                fatalError("Unexpected sender: \(String(describing: sender))")
+            }
+            detailView.m_idMovie = selectedMealCell.IdMovie!
+        default:
+            fatalError("Unexpected Segue Identifier; \(String(describing: segue.identifier))")
+        }
+    }
 }
 
 // MARK: - Extensions
-
 extension SearchListViewController: UISearchBarDelegate {
 
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
