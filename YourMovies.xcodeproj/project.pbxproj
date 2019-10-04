@@ -15,6 +15,7 @@
 		8B57AD6923472D4400C466EE /* SearchListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B57AD6723472D4400C466EE /* SearchListViewController.swift */; };
 		8B57AD6E23472EC900C466EE /* CellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B57AD6D23472EC900C466EE /* CellTableViewCell.swift */; };
 		8B57AD6F23472EC900C466EE /* CellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B57AD6D23472EC900C466EE /* CellTableViewCell.swift */; };
+		8B84CE4423477D6300362A96 /* CopyableUILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B84CE4323477D6300362A96 /* CopyableUILabel.swift */; };
 		8B871F7823471698007E7A4C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B871F7723471698007E7A4C /* AppDelegate.swift */; };
 		8B871F7A23471698007E7A4C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B871F7923471698007E7A4C /* SceneDelegate.swift */; };
 		8B871F7F23471698007E7A4C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B871F7D23471698007E7A4C /* Main.storyboard */; };
@@ -44,6 +45,7 @@
 		8B57AD5E2347291400C466EE /* APIRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRoute.swift; sourceTree = "<group>"; };
 		8B57AD6723472D4400C466EE /* SearchListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchListViewController.swift; sourceTree = "<group>"; };
 		8B57AD6D23472EC900C466EE /* CellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellTableViewCell.swift; sourceTree = "<group>"; };
+		8B84CE4323477D6300362A96 /* CopyableUILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CopyableUILabel.swift; sourceTree = "<group>"; };
 		8B871F7423471698007E7A4C /* YourMovies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YourMovies.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8B871F7723471698007E7A4C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8B871F7923471698007E7A4C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -148,6 +150,14 @@
 			path = Assets;
 			sourceTree = "<group>";
 		};
+		8B84CE4223477D4900362A96 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				8B84CE4323477D6300362A96 /* CopyableUILabel.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
 		8B871F6B23471698007E7A4C = {
 			isa = PBXGroup;
 			children = (
@@ -171,6 +181,7 @@
 		8B871F7623471698007E7A4C /* YourMovies */ = {
 			isa = PBXGroup;
 			children = (
+				8B84CE4223477D4900362A96 /* Common */,
 				8B57AD6123472CB900C466EE /* Core */,
 				8B0DD108234753E3009BA6E5 /* DetailViewController */,
 				8B57AD6623472D1C00C466EE /* ListController */,
@@ -360,6 +371,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8B871F7823471698007E7A4C /* AppDelegate.swift in Sources */,
+				8B84CE4423477D6300362A96 /* CopyableUILabel.swift in Sources */,
 				8B57AD6823472D4400C466EE /* SearchListViewController.swift in Sources */,
 				8B57AD6E23472EC900C466EE /* CellTableViewCell.swift in Sources */,
 				8B0DD107234753E0009BA6E5 /* DetailViewController.swift in Sources */,
