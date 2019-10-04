@@ -1,0 +1,14 @@
+/* 
+  Localizable.strings
+  YourMovies
+
+  Created by Francisco José Gonzlález Egea on 04/10/2019.
+  Copyright © 2019 Francisco José Gonzlález Egea. All rights reserved.
+*/
+
+"Year" = "Year";
+"Title" = "Title";
+"Runtime" = "Runtime";
+"Site" = "Web Site";
+"Synopsis" = "Synopsis";
+"Genre" = "Genre";

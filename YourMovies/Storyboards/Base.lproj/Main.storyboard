@@ -124,7 +124,7 @@
                                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VIT-b2-ugK">
                                                 <rect key="frame" x="184" y="69" width="120" height="29"/>
                                                 <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <state key="normal" title="Share site" image="square.and.arrow.up" catalog="system"/>
+                                                <state key="normal" image="square.and.arrow.up" catalog="system"/>
                                                 <connections>
                                                     <action selector="shareObject:" destination="HDb-FI-02M" eventType="touchUpInside" id="y4R-YY-lcH"/>
                                                 </connections>
@@ -296,13 +296,19 @@
                     <navigationItem key="navigationItem" id="CPm-Ok-4ie"/>
                     <size key="freeformSize" width="414" height="1500"/>
                     <connections>
-                        <outlet property="m_date" destination="tPP-sb-3Zv" id="cJC-If-1CN"/>
-                        <outlet property="m_genre" destination="V8D-Wm-uME" id="cB2-wb-OAl"/>
+                        <outlet property="m_dateText" destination="tPP-sb-3Zv" id="cJC-If-1CN"/>
+                        <outlet property="m_genreText" destination="V8D-Wm-uME" id="cB2-wb-OAl"/>
+                        <outlet property="m_genreTitle" destination="Sam-6n-Tbi" id="zxU-pe-axQ"/>
                         <outlet property="m_image" destination="Ccq-Zb-qjz" id="qEU-1G-d8p"/>
-                        <outlet property="m_runtime" destination="bX9-ss-O5P" id="eJn-B0-uaA"/>
-                        <outlet property="m_sinopsis" destination="qWB-a4-e56" id="Yo7-VZ-cIw"/>
-                        <outlet property="m_site" destination="Yd9-vG-vnX" id="83n-Hc-wbI"/>
-                        <outlet property="m_title" destination="0P0-9E-GAP" id="Ref-ek-5Di"/>
+                        <outlet property="m_runtimeText" destination="bX9-ss-O5P" id="eJn-B0-uaA"/>
+                        <outlet property="m_runtimeTitle" destination="W4i-O3-3WP" id="i62-PQ-mdg"/>
+                        <outlet property="m_sinopsisText" destination="qWB-a4-e56" id="Yo7-VZ-cIw"/>
+                        <outlet property="m_siteText" destination="Yd9-vG-vnX" id="83n-Hc-wbI"/>
+                        <outlet property="m_siteTitle" destination="8Ux-0S-Occ" id="7Kv-Df-cLH"/>
+                        <outlet property="m_synopsisTitle" destination="id9-eL-GBu" id="H27-Io-O3L"/>
+                        <outlet property="m_titleText" destination="0P0-9E-GAP" id="Ref-ek-5Di"/>
+                        <outlet property="m_titleTitle" destination="d3v-j7-AOk" id="ZuF-m2-iz6"/>
+                        <outlet property="m_yearTitle" destination="QHq-39-RkP" id="vTd-xn-QK2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r1E-l1-fEl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

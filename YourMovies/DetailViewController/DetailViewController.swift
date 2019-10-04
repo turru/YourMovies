@@ -13,13 +13,20 @@ import Alamofire
 class DetailViewController: UIViewController {
 
     //MARK: Variables
+    @IBOutlet weak var m_titleTitle: UILabel!
+    @IBOutlet weak var m_yearTitle: UILabel!
+    @IBOutlet weak var m_runtimeTitle: UILabel!
+    @IBOutlet weak var m_genreTitle: UILabel!
+    @IBOutlet weak var m_siteTitle: UILabel!
+    @IBOutlet weak var m_synopsisTitle: UILabel!
+
     @IBOutlet weak var m_image: UIImageView!
-    @IBOutlet weak var m_title: UILabel!
-    @IBOutlet weak var m_date: UILabel!
-    @IBOutlet weak var m_runtime: UILabel!
-    @IBOutlet weak var m_genre: UILabel!
-    @IBOutlet weak var m_site: UILabel!
-    @IBOutlet weak var m_sinopsis: UILabel!
+    @IBOutlet weak var m_titleText: UILabel!
+    @IBOutlet weak var m_dateText: UILabel!
+    @IBOutlet weak var m_runtimeText: UILabel!
+    @IBOutlet weak var m_genreText: UILabel!
+    @IBOutlet weak var m_siteText: UILabel!
+    @IBOutlet weak var m_sinopsisText: UILabel!
 
     public var m_idMovie: String?
 
@@ -35,6 +42,14 @@ class DetailViewController: UIViewController {
     override func viewDidLoad()
     {
         super.viewDidLoad()
+
+        m_titleTitle.text = NSLocalizedString("Title", comment: "")
+        m_yearTitle.text = NSLocalizedString("Year", comment: "")
+        m_runtimeTitle.text = NSLocalizedString("Runtime", comment: "")
+        m_genreTitle.text = NSLocalizedString("Genre", comment: "")
+        m_siteTitle.text = NSLocalizedString("Site", comment: "")
+        m_synopsisTitle.text = NSLocalizedString("Synopsis", comment: "")
+
         loadingRecoverDataScreen(enable: true)
         guard let id = m_idMovie else {
             print("Id of movie no found")
@@ -45,12 +60,12 @@ class DetailViewController: UIViewController {
 
     private func populateData()
     {
-        m_title.text = m_searchResult["Title"].stringValue
-        m_date.text = m_searchResult["Year"].stringValue
-        m_runtime.text = m_searchResult["Runtime"].stringValue
-        m_genre.text = m_searchResult["Genre"].stringValue
-        m_site.text = m_searchResult["Website"].stringValue
-        m_sinopsis.text = m_searchResult["Plot"].stringValue
+        m_titleText.text = m_searchResult["Title"].stringValue
+        m_dateText.text = m_searchResult["Year"].stringValue
+        m_runtimeText.text = m_searchResult["Runtime"].stringValue
+        m_genreText.text = m_searchResult["Genre"].stringValue
+        m_siteText.text = m_searchResult["Website"].stringValue
+        m_sinopsisText.text = m_searchResult["Plot"].stringValue
 
         if let url = m_searchResult["Poster"].string {
             m_apiFetcher.fetchImage(url: url, completionHandler: { image, error in
