@@ -78,7 +78,6 @@ class DetailViewController: UIViewController {
     }
 
     private func fetchDataById(for text: String) {
-        print("Id of movie: \(m_idMovie!)")
         m_apiFetcher.searchById(searchText: text, completionHandler: {
             [weak self] results, error in
             if case .failure = error {

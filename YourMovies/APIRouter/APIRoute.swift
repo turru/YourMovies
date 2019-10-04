@@ -47,8 +47,6 @@ class APIRoute {
     func searchById(searchText: String, completionHandler: @escaping (JSON?, NetworkError) -> ()) {
 
         let urlToSearch = urlApi + key + "i=\(searchText)&" + urlApiType + urlApiPlot + urlApiTypeDoc
-        print("urlToSearch: \(urlToSearch)")
-
         Alamofire.request(urlToSearch).responseJSON { response in
             guard let data = response.data else {
                 completionHandler(nil, .failure)

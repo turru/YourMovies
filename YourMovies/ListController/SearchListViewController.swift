@@ -124,7 +124,6 @@ extension SearchListViewController: UISearchBarDelegate {
     }
 
     func fetchResults(for text: String) {
-        print("Text Searched: \(text)")
         m_apiFetcher.search(searchText: text, completionHandler: {
             [weak self] results, error in
             if case .failure = error {
