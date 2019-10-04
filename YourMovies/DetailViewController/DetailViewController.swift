@@ -113,10 +113,17 @@ class DetailViewController: UIViewController {
     }
 
     // MARK: Actions
-    // TODO
     @IBAction func shareObject(_ sender: Any) {
 
-        let activity = UIActivityViewController(activityItems: [], applicationActivities: nil) // TODO saherd website
+        guard let textURL = m_siteText.text else {
+            print("No url found")
+            return
+        }
+
+        let myWebsite = NSURL(string: textURL)
+        let shaeAll = [myWebsite]
+
+        let activity = UIActivityViewController(activityItems: shaeAll as [Any], applicationActivities: nil)
         if (UIDevice.current.userInterfaceIdiom == .phone) {
             self.present(activity, animated: true)
         } else {
@@ -159,8 +166,6 @@ class DetailViewController: UIViewController {
 
         action.addAction(UIAlertAction(title: NSLocalizedString("Cancel", comment: ""), style: .cancel, handler: nil))
 
-
-
         if (UIDevice.current.userInterfaceIdiom == .phone) {
             self.present(action, animated: true, completion: nil)
         } else {
@@ -169,9 +174,6 @@ class DetailViewController: UIViewController {
                 popOver.sourceView = self.view
             }
         }
-
-
-
     }
 
     func saveImage() {
@@ -180,7 +182,6 @@ class DetailViewController: UIViewController {
             return
         }
         UIImageWriteToSavedPhotosAlbum(selectedImage, self, #selector(saveImage(_:didFinishSavingWithError:contextInfo:)), nil)
-
     }
 
     @objc func saveImage(_ image: UIImage, didFinishSavingWithError error: Error?, contextInfo: UnsafeRawPointer) {

@@ -27,6 +27,7 @@ class APIRoute {
 
         let urlToSearch = urlApi + key + "s=\(searchText)&" + urlApiType
         let urlString = urlToSearch.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
+        
         Alamofire.request(urlString).responseJSON { response in
             guard let data = response.data else {
                 completionHandler(nil, .failure)
@@ -91,6 +92,7 @@ class APIRoute {
 }
 
 extension String {
+
     var isValidURL: Bool {
         let detector = try! NSDataDetector(types: NSTextCheckingResult.CheckingType.link.rawValue)
         if let match = detector.firstMatch(in: self, options: [], range: NSRange(location: 0, length: self.utf16.count)) {

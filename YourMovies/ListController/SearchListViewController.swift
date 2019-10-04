@@ -14,8 +14,6 @@ class SearchListViewController: UITableViewController {
 
     // MARK: - Variables
     @IBOutlet weak var m_searchBar: UISearchBar!
-
-    // MARK: - Private Variables
     private let m_searchController = UISearchController(searchResultsController: nil)
     private var m_searchResults = [JSON]() {
         didSet {
