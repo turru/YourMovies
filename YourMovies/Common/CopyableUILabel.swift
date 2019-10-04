@@ -15,6 +15,7 @@ class CopyableUILabel: UILabel {
             return true
         }
     }
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         sharedInit()
@@ -28,8 +29,8 @@ class CopyableUILabel: UILabel {
     func sharedInit() {
         isUserInteractionEnabled = true
         addGestureRecognizer(UILongPressGestureRecognizer(
-            target: self,
-            action: #selector(showMenu(sender:))
+                target: self,
+                action: #selector(showMenu(sender:))
         ))
     }
 

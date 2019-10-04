@@ -12,3 +12,10 @@
 "Site" = "Web Site";
 "Synopsis" = "Synopsis";
 "Genre" = "Genre";
+"SaveSuccess" = "Great! your image has been saved to your photos.";
+"Saved" = "Saved!";
+"SavedError" = "Error to save!";
+"Choice" = "Choose wisely!";
+"saveLibrary" = "Save to library!";
+"Library" = "Library!";
+"Cancel" = "Cancel";

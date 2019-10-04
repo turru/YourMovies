@@ -18,9 +18,9 @@ class SearchListViewController: UITableViewController {
     // MARK: - Private Variables
     private let m_searchController = UISearchController(searchResultsController: nil)
     private var m_searchResults = [JSON]() {
-          didSet {
-              tableView.reloadData()
-          }
+        didSet {
+            tableView.reloadData()
+        }
     }
 
     private let m_apiFetcher = APIRoute()
@@ -30,8 +30,7 @@ class SearchListViewController: UITableViewController {
     private let m_identifierSegue = "showDetail"
 
     // MARK: - Inits
-    override func viewDidLoad()
-    {
+    override func viewDidLoad() {
         super.viewDidLoad()
         m_searchBar.delegate = self
         tableView.tableHeaderView = m_searchBar
@@ -39,20 +38,15 @@ class SearchListViewController: UITableViewController {
     }
 
     // MARK: - Table view data source
-    override func numberOfSections(in tableView: UITableView) -> Int
-    {
+    override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
 
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
-    {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 
-        if(m_searchResults.count > 0)
-        {
+        if (m_searchResults.count > 0) {
             setupTableViewBackgroundView(text: "")
-        }
-        else
-        {
+        } else {
             setupTableViewBackgroundView(text: "No results to show")
         }
 
@@ -71,32 +65,29 @@ class SearchListViewController: UITableViewController {
         if let url = m_searchResults[indexPath.row]["Poster"].string {
             m_apiFetcher.fetchImage(url: url, completionHandler: { image, error in
 
-                if(error == .success)
-                {
+                if (error == .success) {
                     cell.m_imageView.image = image
-                }
-                else
-                {
+                } else {
                     cell.m_imageView.image = UIImage(named: "imagePlaceholer")
                 }
             })
         }
 
-      return cell
+        return cell
     }
 
     // MARK: - Private Methods
     private func setupTableViewBackgroundView(text: String) {
-          let backgroundViewLabel = UILabel(frame: .zero)
-          backgroundViewLabel.textColor = .darkGray
-          backgroundViewLabel.numberOfLines = 0
-          backgroundViewLabel.text = text
-          backgroundViewLabel.textAlignment = NSTextAlignment.center
-          backgroundViewLabel.font.withSize(20)
-          tableView.backgroundView = backgroundViewLabel
+        let backgroundViewLabel = UILabel(frame: .zero)
+        backgroundViewLabel.textColor = .darkGray
+        backgroundViewLabel.numberOfLines = 0
+        backgroundViewLabel.text = text
+        backgroundViewLabel.textAlignment = NSTextAlignment.center
+        backgroundViewLabel.font.withSize(20)
+        tableView.backgroundView = backgroundViewLabel
     }
 
-     // MARK: - Navigation
+    // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 
         super.prepare(for: segue, sender: sender)
@@ -125,12 +116,12 @@ extension SearchListViewController: UISearchBarDelegate {
 
 
         guard let textToSearch = searchBar.text, !textToSearch.isEmpty else {
-           return
+            return
         }
 
         if Date().timeIntervalSince(m_previousRun) > m_minInterval {
-           m_previousRun = Date()
-           fetchResults(for: textToSearch)
+            m_previousRun = Date()
+            fetchResults(for: textToSearch)
         }
     }
 

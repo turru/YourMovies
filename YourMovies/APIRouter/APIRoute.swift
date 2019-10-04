@@ -68,8 +68,7 @@ class APIRoute {
 
     func fetchImage(url: String, completionHandler: @escaping (UIImage?, NetworkError) -> ()) {
 
-        if(!url.isValidURL)
-        {
+        if (!url.isValidURL) {
             completionHandler(nil, .failure)
             return
         }

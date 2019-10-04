@@ -39,8 +39,7 @@ class DetailViewController: UIViewController {
     }
 
     // MARK: Methods
-    override func viewDidLoad()
-    {
+    override func viewDidLoad() {
         super.viewDidLoad()
 
         m_titleTitle.text = NSLocalizedString("Title", comment: "")
@@ -58,8 +57,7 @@ class DetailViewController: UIViewController {
         fetchDataById(for: id)
     }
 
-    private func populateData()
-    {
+    private func populateData() {
         m_titleText.text = m_searchResult["Title"].stringValue
         m_dateText.text = m_searchResult["Year"].stringValue
         m_runtimeText.text = m_searchResult["Runtime"].stringValue
@@ -69,12 +67,9 @@ class DetailViewController: UIViewController {
 
         if let url = m_searchResult["Poster"].string {
             m_apiFetcher.fetchImage(url: url, completionHandler: { image, error in
-                if(error == .success)
-                {
+                if (error == .success) {
                     self.m_image.image = image
-                }
-                else
-                {
+                } else {
                     self.m_image.image = UIImage(named: "imagePlaceholer")
                 }
             })
@@ -97,14 +92,12 @@ class DetailViewController: UIViewController {
         })
     }
 
-    private func loadingRecoverDataScreen(enable: Bool){
-        if(enable)
-        {
+    private func loadingRecoverDataScreen(enable: Bool) {
+        if (enable) {
             m_activityIndicator.center = self.view.center
             m_activityIndicator.hidesWhenStopped = true
             m_activityIndicator.frame = UIScreen.main.bounds
-            if #available(iOS 13.0, *)
-            {
+            if #available(iOS 13.0, *) {
                 m_activityIndicator.style = UIActivityIndicatorView.Style.large
             } else {
                 m_activityIndicator.style = UIActivityIndicatorView.Style.gray
@@ -113,9 +106,7 @@ class DetailViewController: UIViewController {
             m_activityIndicator.backgroundColor = UIColor(red: 1.00, green: 1.00, blue: 1.00, alpha: 1.00)
             view.addSubview(m_activityIndicator)
             m_activityIndicator.startAnimating()
-        }
-        else
-        {
+        } else {
             m_activityIndicator.stopAnimating()
             m_activityIndicator.removeFromSuperview()
         }
@@ -126,12 +117,9 @@ class DetailViewController: UIViewController {
     @IBAction func shareObject(_ sender: Any) {
 
         let activity = UIActivityViewController(activityItems: [], applicationActivities: nil) // TODO saherd website
-        if(UIDevice.current.userInterfaceIdiom == .phone)
-        {
+        if (UIDevice.current.userInterfaceIdiom == .phone) {
             self.present(activity, animated: true)
-        }
-        else
-        {
+        } else {
             present(activity, animated: true, completion: nil)
             if let popOver = activity.popoverPresentationController {
                 popOver.sourceView = self.view
@@ -161,20 +149,32 @@ class DetailViewController: UIViewController {
         sender.view?.removeFromSuperview()
     }
 
-    @objc func choseSaveImage (_ sender: Any)
-    {
-        let action = UIAlertController(title: "Guarda library", message: "Elige saviamente", preferredStyle: .actionSheet)
-        action.addAction(UIAlertAction(title: "Carrete", style: .default, handler:{(action:UIAlertAction) in
-            self.saveImage ()
+    @objc func choseSaveImage(_ sender: Any) {
+        let action = UIAlertController(title: NSLocalizedString("saveLibrary", comment: ""),
+                                       message: NSLocalizedString("Choice", comment: ""), preferredStyle: .actionSheet)
+
+        action.addAction(UIAlertAction(title: NSLocalizedString("Library", comment: ""), style: .default, handler: { (action: UIAlertAction) in
+            self.saveImage()
         }))
 
-        action.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        action.addAction(UIAlertAction(title: NSLocalizedString("Cancel", comment: ""), style: .cancel, handler: nil))
 
-        self.present(action, animated: true, completion: nil)
+
+
+        if (UIDevice.current.userInterfaceIdiom == .phone) {
+            self.present(action, animated: true, completion: nil)
+        } else {
+            present(action, animated: true, completion: nil)
+            if let popOver = action.popoverPresentationController {
+                popOver.sourceView = self.view
+            }
+        }
+
+
+
     }
 
-    func saveImage ()
-    {
+    func saveImage() {
         guard let selectedImage = m_image.image else {
             print("Image not found!")
             return
@@ -185,13 +185,13 @@ class DetailViewController: UIViewController {
 
     @objc func saveImage(_ image: UIImage, didFinishSavingWithError error: Error?, contextInfo: UnsafeRawPointer) {
         if let error = error {
-            showAlertWith(title: "Save error", message: error.localizedDescription)
+            showAlertWith(title: NSLocalizedString("SavedError", comment: ""), message: error.localizedDescription)
         } else {
-            showAlertWith(title: "Saved!", message: "Great! your image has been saved to your photos.")
+            showAlertWith(title: NSLocalizedString("Saved", comment: ""), message: NSLocalizedString("SaveSuccess", comment: ""))
         }
     }
 
-    func showAlertWith(title: String, message: String){
+    func showAlertWith(title: String, message: String) {
         let ac = UIAlertController(title: title, message: message, preferredStyle: .alert)
         ac.addAction(UIAlertAction(title: "OK", style: .default))
         present(ac, animated: true)
