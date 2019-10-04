@@ -19,7 +19,7 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var m_runtime: UILabel!
     @IBOutlet weak var m_genre: UILabel!
     @IBOutlet weak var m_site: UILabel!
-    @IBOutlet weak var m_sinopsis: UITextView!
+    @IBOutlet weak var m_sinopsis: UILabel!
 
     public var m_idMovie: String?
 
