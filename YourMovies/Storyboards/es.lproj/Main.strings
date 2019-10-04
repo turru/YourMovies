@@ -1,0 +1,60 @@
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "0P0-9E-GAP"; */
+"0P0-9E-GAP.text" = "Title";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "5E4-Rj-Dww"; */
+"5E4-Rj-Dww.text" = "Label";
+
+/* Class = "UILabel"; text = "Site:"; ObjectID = "8Ux-0S-Occ"; */
+"8Ux-0S-Occ.text" = "Site:";
+
+/* Class = "UITableViewController"; title = "List"; ObjectID = "GV0-mL-qgf"; */
+"GV0-mL-qgf.title" = "List";
+
+/* Class = "UIViewController"; title = "Detail"; ObjectID = "HDb-FI-02M"; */
+"HDb-FI-02M.title" = "Detail";
+
+/* Class = "UILabel"; text = "Guardianes de la dimensión prohibida"; ObjectID = "KBg-ZS-Ffo"; */
+"KBg-ZS-Ffo.text" = "Guardianes de la dimensión prohibida";
+
+/* Class = "UILabel"; text = "Year:"; ObjectID = "QHq-39-RkP"; */
+"QHq-39-RkP.text" = "Year:";
+
+/* Class = "UILabel"; text = "Genre:"; ObjectID = "Sam-6n-Tbi"; */
+"Sam-6n-Tbi.text" = "Genre:";
+
+/* Class = "UISearchBar"; placeholder = "Search..."; ObjectID = "V3w-Av-zwe"; */
+"V3w-Av-zwe.placeholder" = "Search...";
+
+/* Class = "UILabel"; text = "Género"; ObjectID = "V8D-Wm-uME"; */
+"V8D-Wm-uME.text" = "Género";
+
+/* Class = "UIButton"; normalTitle = "Share site"; ObjectID = "VIT-b2-ugK"; */
+"VIT-b2-ugK.normalTitle" = "Share site";
+
+/* Class = "UILabel"; text = "Runtime:"; ObjectID = "W4i-O3-3WP"; */
+"W4i-O3-3WP.text" = "Runtime:";
+
+/* Class = "UILabel"; text = "Web"; ObjectID = "Yd9-vG-vnX"; */
+"Yd9-vG-vnX.text" = "Web";
+
+/* Class = "UILabel"; text = "Title:"; ObjectID = "aTs-Nb-epv"; */
+"aTs-Nb-epv.text" = "Title:";
+
+/* Class = "UILabel"; text = "Duración"; ObjectID = "bX9-ss-O5P"; */
+"bX9-ss-O5P.text" = "Duración";
+
+/* Class = "UILabel"; text = "Title:"; ObjectID = "d3v-j7-AOk"; */
+"d3v-j7-AOk.text" = "Title:";
+
+/* Class = "UILabel"; text = "Synopsis"; ObjectID = "id9-eL-GBu"; */
+"id9-eL-GBu.text" = "Synopsis";
+
+/* Class = "UILabel"; text = "Year:"; ObjectID = "m9m-yO-grq"; */
+"m9m-yO-grq.text" = "Year:";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "qWB-a4-e56"; */
+"qWB-a4-e56.text" = "Label";
+
+/* Class = "UILabel"; text = "Fecha de salida"; ObjectID = "tPP-sb-3Zv"; */
+"tPP-sb-3Zv.text" = "Fecha de salida";
