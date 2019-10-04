@@ -50,7 +50,7 @@ class DetailViewController: UIViewController {
         m_runtime.text = m_searchResult["Runtime"].stringValue
         m_genre.text = m_searchResult["Genre"].stringValue
         m_site.text = m_searchResult["Website"].stringValue
-        m_sinopsis.text = m_searchResult["Website"].stringValue
+        m_sinopsis.text = m_searchResult["Plot"].stringValue
 
         if let url = m_searchResult["Poster"].string {
             m_apiFetcher.fetchImage(url: url, completionHandler: { image, error in

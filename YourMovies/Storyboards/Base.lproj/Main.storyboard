@@ -115,6 +115,54 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ubb-6I-ZYC">
+                                <rect key="frame" x="20" y="88" width="374" height="774"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cBX-m4-38p" userLabel="ContentView">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="774"/>
+                                        <subviews>
+                                            <imageView verifyAmbiguity="ignoreSizes" clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ccq-Zb-qjz" userLabel="image">
+                                                <rect key="frame" x="8" y="8" width="150" height="150"/>
+                                                <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <gestureRecognizers/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="150" id="JlS-Wh-1Dw"/>
+                                                    <constraint firstAttribute="height" constant="150" id="z09-50-2bk"/>
+                                                </constraints>
+                                                <connections>
+                                                    <outletCollection property="gestureRecognizers" destination="G1A-cf-nqW" appends="YES" id="aAo-8s-Z3b"/>
+                                                </connections>
+                                            </imageView>
+                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VIT-b2-ugK">
+                                                <rect key="frame" x="184" y="69" width="120" height="29"/>
+                                                <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <state key="normal" title="Share site" image="square.and.arrow.up" catalog="system"/>
+                                                <connections>
+                                                    <action selector="shareObject:" destination="HDb-FI-02M" eventType="touchUpInside" id="y4R-YY-lcH"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="Ccq-Zb-qjz" firstAttribute="top" secondItem="cBX-m4-38p" secondAttribute="top" constant="8" id="Aie-Rk-qvI"/>
+                                            <constraint firstItem="VIT-b2-ugK" firstAttribute="leading" secondItem="Ccq-Zb-qjz" secondAttribute="trailing" constant="26" id="I7A-Hx-OCc"/>
+                                            <constraint firstItem="Ccq-Zb-qjz" firstAttribute="leading" secondItem="cBX-m4-38p" secondAttribute="leading" constant="8" id="gf4-4i-2ou"/>
+                                            <constraint firstItem="VIT-b2-ugK" firstAttribute="top" secondItem="cBX-m4-38p" secondAttribute="top" constant="69" id="tFP-8D-MQL"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="cBX-m4-38p" secondAttribute="trailing" id="5ah-h8-GOj"/>
+                                    <constraint firstItem="cBX-m4-38p" firstAttribute="width" secondItem="ubb-6I-ZYC" secondAttribute="width" id="Iyz-mC-JU9"/>
+                                    <constraint firstAttribute="bottom" secondItem="cBX-m4-38p" secondAttribute="bottom" id="UbE-mq-YY6"/>
+                                    <constraint firstItem="cBX-m4-38p" firstAttribute="leading" secondItem="ubb-6I-ZYC" secondAttribute="leading" id="etG-Tp-7ny"/>
+                                    <constraint firstItem="cBX-m4-38p" firstAttribute="top" secondItem="ubb-6I-ZYC" secondAttribute="top" id="qag-Lf-OH6"/>
+                                    <constraint firstItem="cBX-m4-38p" firstAttribute="height" secondItem="ubb-6I-ZYC" secondAttribute="height" priority="250" id="tks-dE-Sgg"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="cS3-op-dzS"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="24Q-ew-1Xg"/>
+                            </scrollView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0P0-9E-GAP">
                                 <rect key="frame" x="20" y="282" width="374" height="59"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -154,10 +202,11 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Sinopsis" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="gKx-Vd-0ua">
-                                <rect key="frame" x="20" y="614" width="374" height="235"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="gKx-Vd-0ua">
+                                <rect key="frame" x="20" y="614" width="374" height="384"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <string key="text">pidnfqwjdnfiqwe pidnfqwjdnfiqwe   pidnfqwjdnfiqwe  pidnfqwjdnfiqwe pidnfqwjdnfiqwe pidnfqwjdnfiqwe pidnfqwjdnfiqwe pidnfqwjdnfiqwe pidnfqwjdnfiqwe pidnfqwjdnfiqwe pidnfqwjdnfiqwe pidnfqwjdnfiqwe pidnfqwjdnfiqwe   pidnfqwjdnfiqwe  pidnfqwjdnfiqwe pidnfqwjdnfiqwe pidnfqwjdnfiqwe pidnfqwjdnfiqwe pidnfqwjdnfiqwe pidnfqwjdnfiqwe pidnfqwjdnfiqwe pidnfqwjdnfiqwe pidnfqwjdnfiqwe pidnfqwjdnfiqwe   pidnfqwjdnfiqwe  pidnfqwjdnfiqwe pidnfqwjdnfiqwe pidnfqwjdnfiqwe pidnfqwjdnfiqwe pidnfqwjdnfiqwe pidnfqwjdnfiqwe pidnfqwjdnfiqwe pidnfqwjdnfiqwe pidnfqwjdnfiqwe pidnfqwjdnfiqwe   pidnfqwjdnfiqwe  pidnfqwjdnfiqwe pidnfqwjdnfiqwe pidnfqwjdnfiqwe pidnfqwjdnfiqwe pidnfqwjdnfiqwe pidnfqwjdnfiqwe pidnfqwjdnfiqwe pidnfqwjdnfiqwe pidnfqwjdnfiqwe pidnfqwjdnfiqwe   pidnfqwjdnfiqwe  pidnfqwjdnfiqwe pidnfqwjdnfiqwe pidnfqwjdnfiqwe pidnfqwjdnfiqwe pidnfqwjdnfiqwe pidnfqwjdnfiqwe pidnfqwjdnfiqwe pidnfqwjdnfiqwe pidnfqwjdnfiqwe pidnfqwjdnfiqwe   pidnfqwjdnfiqwe  pidnfqwjdnfiqwe pidnfqwjdnfiqwe pidnfqwjdnfiqwe pidnfqwjdnfiqwe pidnfqwjdnfiqwe pidnfqwjdnfiqwe pidnfqwjdnfiqwe pidnfqwjdnfiqwe </string>
                                 <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -177,15 +226,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ccq-Zb-qjz">
-                                <rect key="frame" x="20" y="88" width="150" height="150"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <gestureRecognizers/>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="G1A-cf-nqW" appends="YES" id="aAo-8s-Z3b"/>
-                                </connections>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Runtime:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W4i-O3-3WP">
                                 <rect key="frame" x="20" y="412" width="374" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -214,17 +254,14 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VIT-b2-ugK">
-                                <rect key="frame" x="224" y="149" width="120" height="29"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Share site" image="square.and.arrow.up" catalog="system"/>
-                                <connections>
-                                    <action selector="shareObject:" destination="HDb-FI-02M" eventType="touchUpInside" id="y4R-YY-lcH"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="t4R-vx-g8w" firstAttribute="trailing" secondItem="ubb-6I-ZYC" secondAttribute="trailing" constant="20" id="9oC-5U-npp"/>
+                            <constraint firstItem="ubb-6I-ZYC" firstAttribute="leading" secondItem="t4R-vx-g8w" secondAttribute="leading" constant="20" id="Dmf-rw-lhX"/>
+                            <constraint firstItem="ubb-6I-ZYC" firstAttribute="top" secondItem="t4R-vx-g8w" secondAttribute="top" id="Jwn-AI-DS8"/>
+                            <constraint firstItem="t4R-vx-g8w" firstAttribute="bottom" secondItem="ubb-6I-ZYC" secondAttribute="bottom" id="MEv-WN-QL2"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="t4R-vx-g8w"/>
                     </view>
                     <navigationItem key="navigationItem" id="CPm-Ok-4ie"/>
