@@ -13,45 +13,107 @@ import Alamofire
 
 class YourMoviesTests: XCTestCase {
 
-    override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    let m_urlToSearch = "http://www.omdbapi.com/?apikey=dea357dd&s=guardianes&"
+    var m_api = APIRoute()
+
+    func testAlomofireSearchByTitle() throws {
+
+        let _expectation = self.expectation(description: "Alamofire")
+        Alamofire.request(m_urlToSearch, method: .get, parameters: nil, encoding: JSONEncoding.default, headers:          nil).validate().responseJSON { (response) in
+
+            switch response.result {
+            case .success:
+                if let data = response.data {
+                    let json = try? JSON(data: data)
+                    let results = json?["Search"].arrayValue
+                    if let empty = results?.isEmpty, !empty  {
+                        XCTAssert(results!.count > 0)
+                    }
+                }
+            case .failure(let error):
+                XCTFail("No data in response")
+                print(error)
+                return
+            }
+            _expectation.fulfill()
+        }
+        waitForExpectations(timeout: 5.0, handler: nil)
     }
 
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
+    func testAPIRouteSearchByTitleAPIRouteWithoutSpaces()  {
 
+        let _expectation = self.expectation(description: "APIRoute")
 
+        m_api.search(searchText: "incredibles", completionHandler: { results, error in
 
-    func textSearchMovieWitSpace() throws {
-        let urlToSearch = "http://www.omdbapi.com/?apikey=dea357dd&s=guardianes&"
-        let api = APIRoute()
-        api.search(searchText: urlToSearch, completionHandler: {
-        results, error in
-        if case .failure = error {
-            XCTFail("No data in response")
-            return
-
+            switch error {
+            case .success:
+                XCTAssert(error == .success)
+            case .failure:
+                XCTFail("No data in response")
             }
 
+            _expectation.fulfill()
         })
-        XCTAssert(true)
-
+        waitForExpectations(timeout: 5.0, handler: nil)
     }
 
+    func testAPIRouteSearchByTitleAPIRouteWithSpaces()  {
 
+        let textToSearch = "The incredibles"
+        let _expectation = self.expectation(description: "APIRoute")
 
-//
-//    func testExample() {
-//        // This is an example of a functional test case.
-//        // Use XCTAssert and related functions to verify your tests produce the correct results.
-//    }
-//
-//    func testPerformanceExample() {
-//        // This is an example of a performance test case.
-//        self.measure {
-//            // Put the code you want to measure the time of here.
-//        }
-//    }
+        m_api.search(searchText: textToSearch, completionHandler: { results, error in
+
+            switch error {
+            case .success:
+                XCTAssert(results!.count > 0)
+//                print("------- examples: \(String(describing: results))")
+            case .failure:
+                XCTFail("No data in response")
+            }
+            _expectation.fulfill()
+        })
+        waitForExpectations(timeout: 5.0, handler: nil)
+    }
+
+    func testAPIRouteSearchByTitleAPIRouteWithoutResults()  {
+
+        let textToSearch = "lalalalalalaa"
+        let _expectation = self.expectation(description: "APIRoute")
+
+        m_api.search(searchText: textToSearch, completionHandler: { results, error in
+
+            switch error {
+            case .success:
+                XCTAssert(results!.count > 0)
+                XCTFail("Results is almost 1")
+            case .failure:
+                XCTAssertNil(results)
+
+            }
+            _expectation.fulfill()
+        })
+        waitForExpectations(timeout: 5.0, handler: nil)
+    }
+
+    func testAPIRouteSearchByIDPIRoute()  {
+
+        // the incredibles with id: tt0317705
+        let textToSearch = "tt0317705"
+        let _expectation = self.expectation(description: "APIRoute")
+
+        m_api.searchById(searchText: textToSearch, completionHandler: { results, error in
+
+            switch error {
+            case .success:
+                XCTAssertNotNil(results)
+            case .failure:
+                XCTFail("No data in response")
+            }
+            _expectation.fulfill()
+        })
+        waitForExpectations(timeout: 5.0, handler: nil)
+    }
 
 }

@@ -24,6 +24,7 @@
 		8B871F8423471699007E7A4C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8B871F8223471699007E7A4C /* LaunchScreen.storyboard */; };
 		8B871F8F23471699007E7A4C /* YourMoviesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B871F8E23471699007E7A4C /* YourMoviesTests.swift */; };
 		8B8B78AD23479B4F0094C0CB /* splashScreen.png in Resources */ = {isa = PBXBuildFile; fileRef = 8B8B78AC23479B4E0094C0CB /* splashScreen.png */; };
+		8BBD75F52348852400FB8123 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0DD106234753E0009BA6E5 /* DetailViewController.swift */; };
 		F464B615BA9376EA6DBA3BB9 /* Pods_YourMovies.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 353D33CE96E561805C59BB68 /* Pods_YourMovies.framework */; };
 /* End PBXBuildFile section */
 
@@ -398,6 +399,7 @@
 			files = (
 				8B57AD6F23472EC900C466EE /* CellTableViewCell.swift in Sources */,
 				8B57AD602347291400C466EE /* APIRoute.swift in Sources */,
+				8BBD75F52348852400FB8123 /* DetailViewController.swift in Sources */,
 				8B57AD6923472D4400C466EE /* SearchListViewController.swift in Sources */,
 				8B871F8F23471699007E7A4C /* YourMoviesTests.swift in Sources */,
 			);
